@@ -106,4 +106,4 @@ MIT License
 
 如果有不足的地方想提供建议或者想一起参与的大佬。 请扫码加入微信群。欢迎大家一起交流！！！
 
-![示例图片](images/f8a6f9fef45eedf1d6ba5adbbe03016a.jpg)
+![示例图片](image/f8a6f9fef45eedf1d6ba5adbbe03016a.jpg)
