@@ -1,7 +1,5 @@
 # LangChain Example
-
-This is a minimal example showing how to wrap `skill_tool` as a LangChain tool and call it,
-including a simple agent run with Qwen-Max (DashScope).
+这里是一个示例关于如何在langchain中利用skills
 
 ## Usage
 

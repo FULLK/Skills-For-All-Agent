@@ -1,20 +1,46 @@
-
 # skills-for-all-agent
 
-面向所有agent框架的skill
+一个python package 作为skill系统去无缝接轨所有agent框架，并将skill内容和agent使用skill能力绑定形成一个完整skill生态
+
+## 出发点
+
+anthropic Claude提出了关于一新范式skills的相关规范来扩展大模型的功能 [Agent Skills ](https://code.claude.com/docs/en/skills)
+
+但存在问题是我并没有寻找到anthropic Claude关于 模型是如何使用skills的代码实现。于是在阅读skills文档后，我决定自己实现一套skills系统来使得模型可以使用skills
+
+期间我寻找了相关使用skill的实战与实现的资源
+
+agentscope 的skill实现[Agent Skill](https://doc.agentscope.io/tutorial/task_agent_skill.html#integrating-agent-skills-with-reactagent)
+
+anthropic sdk 的skill实战 [src/anthropic/resources/beta/skills](https://github.com/anthropics/anthropic-sdk-python/tree/main/src/anthropic/resources/beta/skills)
+
+claude-codebooks的skill实战  [skills](https://github.com/anthropics/claude-cookbooks/tree/main/skills)
+
+DeepAgents的 skill实现 [Using skills with Deep Agents](https://blog.langchain.com/using-skills-with-deep-agents/)
+
+但它存在以下问题
+
+1. 和agent框架高度耦合 并没有统一成一个一致的接口能面向所有agent框架使用
+2. 部分skills的实现并没有开发源码
+3. 关于各个skill文档内容 也并没有面向所有agent框架 也没有与skills实现深度绑定
+
+所以，我想实现一个skill系统，它能以非常简单的方式无缝提供给所有agent框架使用skill。同时各个skill文档内容也随着这个skill系统深度绑定，所有agent框架可以在使用skill的同时也能获取skill文档。
+
+而要想实现上述。通过如下角度实现最为合适
+
+1. python package 形式。几乎所有agent框架使用python。以包的形式提供skill能力和skill文档，能够让agent框架上手即用
+2. 通过已有的所有agent框架的最通用的技术来实现这个skill能力。这样能保证所有agent框架都可以使用
 
 ## 优点
 
-1. 无缝兼容所有模型
+1. 无缝兼容所有agent框架
 2. 建立在传统框架技术上
-3. 只需要pip3 install skills_for_all_agent 并提供给大模型一个接口即可让大模型使用skill
+3. 只需要pip3 install skills_for_all_agent 并提供给agent一个tool即可让agent使用skill
+4. 包中带有skill内容，所有通过pip3 install skills_for_all_agent后都可以通过自带的一个前端界面自动化生成自己想要的skill内容 或者上传自己的skill内容。
+5. agent使用skill时可以自动使用你以及生成的skill内容或者你上传的skill内容
 
 
-## 后续安排
 
-1. 提供前端页面用于自动化上传skill和保存skill到当前package，使得所有人只需要pip3 install skills_for_all_agent 就可以让自己的模型使用skill。从而建立起skill的完整生态
-2. 尝试去接轨其他agent架构
-3. 所有agent想要使用skill只需下载这个package就可以使用skill
 
 
 如果有不足的地方想提供建议或者想一起参与的大佬。 请扫码加入微信群。欢迎大家一起交流！！！
