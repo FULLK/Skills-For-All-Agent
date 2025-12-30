@@ -88,7 +88,7 @@ def main():
 
     llm = ChatTongyi(
         model_name="qwen3-max-preview",
-        api_key="sk-8c8fba3079574742a4ee85dce972d409",
+        api_key="APIKEY",
         temperature=0,
     )
 
