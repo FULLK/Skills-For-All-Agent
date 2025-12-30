@@ -1,0 +1,58 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "skills-for-all-agent"
+version = "0.1.0"
+description = "Lightweight skill loader and runner for agent function calling."
+readme = "README.md"
+authors = [
+  { name = "LLK" }
+]
+keywords = ["agent", "skills", "tooling", "function-calling"]
+requires-python = ">=3.8"
+
+dependencies = []
+
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Software Development :: Libraries",
+  "Topic :: Software Development :: Libraries :: Python Modules"
+]
+
+[project.urls]
+Homepage = "https://example.com"
+Repository = "https://example.com"
+Issues = "https://example.com/issues"
+
+[project.optional-dependencies]
+langchain = [
+  "langchain>=0.1.0",
+  "langchain-community>=0.1.0",
+  "pydantic>=2.0.0"
+]
+
+[tool.setuptools]
+packages = ["skills_for_all_agent"]
+
+[tool.setuptools.package-data]
+skills_for_all_agent = [
+  "skills/**/*",
+  "skills/**/*.md",
+  "skills/**/*.c"
+]
+
+[tool.setuptools.data-files]
+"langchain_example" = ["langchain_example/*"]
+
+[tool.setuptools.package-data]
+skills_for_all_agent = ["skills/**/*", "skills/**/*.md", "skills/**/*.c"]
