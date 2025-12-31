@@ -6,6 +6,11 @@
 
 一个python package 作为skills系统去无缝接轨所有agent框架，并将skill内容和agent使用skill能力绑定形成一个完整skill生态
 
+```
+pip install skills-for-all-agent
+from skills_for_all_agent.skill_tool import skill_tool,DEFAULT_SKILLS_ROOT
+```
+
 ## 出发点
 
 anthropic Claude提出了关于一新范式skills的相关规范来扩展大模型的功能 [Agent Skills ](https://code.claude.com/docs/en/skills)
